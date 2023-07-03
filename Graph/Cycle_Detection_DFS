@@ -1,0 +1,30 @@
+/*
+We used DFS funtion with return value boolean and return if graph is cyclic or not (by using OR's operator)
+If graph is not connected we call for each node , if it's already visited we would not call DFS for same component
+
+If graph's one of node is visited by someone else DFS then it is cyclic graph
+*/
+
+public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
+        boolean[] vis = new boolean[V];
+        for(int i = 0 ; i < V ; i++){
+            if(!vis[i]){
+              if(DFS(adj,-1,i,vis)) return true;
+            }
+        }
+        return false;
+        
+    }
+    public boolean DFS(ArrayList<ArrayList<Integer>> adj , int parent , int node , boolean[] vis){
+        vis[node] = true;
+        boolean ans = false;
+        for(int k : adj.get(node)){
+            if(!vis[k]){
+                ans|=DFS(adj,node,k,vis);
+            }
+            else if(k!=parent){
+                ans |= true;
+            }
+        }
+        return ans;
+    }
