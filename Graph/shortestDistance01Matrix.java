@@ -1,4 +1,6 @@
 /*
+We have started BFS from destination to solve this problem . exlanation is simple we can save distance if and only if we start from destination only.
+
 If we put vis == true before loop , there would be wrong ans because there is someother BFS call can manipulate data of curr cell every time 
 so ensure that alway puts vis == true inside for loop 
 
