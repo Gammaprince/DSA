@@ -1,5 +1,5 @@
 /*
-Toposort : Toposort is kind of sorting which defines that if u -> v then u comes first before v in linear ordering 
+Toposort : Toposort is kind of sorting which defines that if u -> v then u comes first before v in linear ordering , Topological sort is only possible in DAG(Directed Acyclic Graph)
 for e.g   5 -> 0 <- 4
           |         |
           V         V
