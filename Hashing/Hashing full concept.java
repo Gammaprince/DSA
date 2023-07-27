@@ -50,5 +50,8 @@ DataStructures to strore chain(l)
      b) delete - log(l)
      c) insert - log(l)
      disadvantage : not cache friendly 
+
+
+ 
 */
 
