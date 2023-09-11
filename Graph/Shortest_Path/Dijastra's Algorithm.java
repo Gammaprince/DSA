@@ -2,6 +2,35 @@
 We used Priority - Queue 
 why priority queue?
 because with the priority queue you have to process first less distance nodes after that large distance , which gives correct ans
+
+TC of Dijastra's Algo = O(E*log(V))
+where E = no of Edges in graph
+      V = no of Vertex/Nodes in graph
+
+
+There is a Derivation of this Time Complexity 
+
+outer while loop run in V times *(popingout(heap(heap_size)) + pushing(heap(heap_size))*no_of_edges_of_vertex(iterating adjacenty list))
+V*((log(heap_size) + ne * log(heap_size)
+V*(log(heap_size)(1+ne))
+in most dense graph no of edges must be V-1 , so ne = V-1 
+V*(log(heap_size)(V)
+
+V*V(log(heap_size)
+
+in worst case priority_queue can put all node again and again so it would be heap_size = V^2
+
+V*V(log(V*V))
+V*V*2(log(V))
+
+since in worst case edges V-1 for every vertex/node it would be V*(V-1) , so V*V = E
+
+hence ,
+ E*log(V) 
+
+ proved 
+
+
 */
 static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
     {
