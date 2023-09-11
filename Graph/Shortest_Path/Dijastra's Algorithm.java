@@ -3,6 +3,9 @@ We used Priority - Queue
 why priority queue?
 because with the priority queue you have to process first less distance nodes after that large distance , which gives correct ans
 
+*** We can also use queue but it would be quite bruteforce approach , since dijastra's algo is greedy in nature it is optimal
+*** using set dijastra is little more optimal
+
 TC of Dijastra's Algo = O(E*log(V))
 where E = no of Edges in graph
       V = no of Vertex/Nodes in graph
