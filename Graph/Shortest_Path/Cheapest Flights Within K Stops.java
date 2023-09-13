@@ -2,6 +2,10 @@
 This problem is different as not usual like normal dijastra's , here instead of distance or cost 
 we prioritize-steps in priority , node with min steps will consider first
 
+Why prioritize- steps?
+just because there may be cause where min distance is not able to achieve results because of involvement of k steps here 
+so first prioritize steps 
+
 if node with min step considering first and steps are increasing only by one , we can apply simle BFS here 
 so for simple BFS Time complexity : E
 and for unusual dijastra's Tc : ElogV
