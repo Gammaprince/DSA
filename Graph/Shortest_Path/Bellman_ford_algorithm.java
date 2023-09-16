@@ -1,4 +1,4 @@
-Bellman ford also works for -ve weight unlike dijastra's but with N^2 Time complexity
+Bellman ford also works for -ve weight unlike dijastra's but with N*E Time complexity
   **Relax all the edges N-1 Times sequentially
   **Relaxation is if(dist[u] + weight < dist[v]){
                       dist[v] = dist[u] + weight
