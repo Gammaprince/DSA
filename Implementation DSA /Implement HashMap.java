@@ -66,4 +66,59 @@ public static class HashMap<K,V>{
     }
     return -1;
   }
+  public V get(K key) throws Exception{
+      int bi = hashFunction(key);
+      int di = getIndexWithinBuckets(key,bi);
+      if(di != -1){
+          HMNode node = buckets[bi].get(di);
+          return node.value;
+      }
+      else {
+          return null;
+      }
+  }
+    public int size(){
+        return size;
+    }
+    public void remove(K key){
+      int bi = hashFunction(key);
+      int di = getIndexWithinBuckets(key,bi);
+      if(di != -1){
+          buckets[bi].remove(di);
+          size--;
+      }
+      else {
+          return null;
+      }
+    }
+    public ArrayList<K> keySet() throws Exception{
+        ArrayList<K> keys = new ArrayList<>();
+        for(int i = 0 ; i < buckets.length ; i++){
+            for(HMNode node : buckets[i]){
+                keys.add(node.key);
+            }
+        }
+        return keys;
+    }
+
+    public void reHash(){
+        LinkedList<HMNode>[] oldBuckets = buckets;
+        initBuckets(buckets.size()*2);
+        for(int i = 0 ; i < oldBuckets.length ; i++){
+            for(HMNode node : oldBuckets[i]){
+                put(node.key,node.value);
+            }
+        }
+        
+    }
+  public boolean containsKey(K key){
+      int bi = hashFunction(key);
+      int di = getIndexWithinBuckets(key,bi);
+      if(di != -1){
+          return true;
+      }
+      else {
+          return false;
+      }
+  }
 }
